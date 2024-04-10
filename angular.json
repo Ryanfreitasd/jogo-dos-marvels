@@ -17,6 +17,14 @@
           "standalone": false
         }
       },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "pt": {
+            "translation": "src/i18n/messages.pt.json"
+          }
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,6 +32,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/jogo-dos-marvels",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -42,6 +52,9 @@
             "scripts": []
           },
           "configurations": {
+            "pt": {
+              "localize": ["pt"]
+            },
             "production": {
               "budgets": [
                 {
@@ -73,6 +86,9 @@
             },
             "development": {
               "buildTarget": "jogo-dos-marvels:build:development"
+            },
+            "pt": {
+              "buildTarget": "jogo-dos-marvels:build:development,pt"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +96,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "jogo-dos-marvels:build"
+            "buildTarget": "jogo-dos-marvels:build",
+            "format": "json",
+            "outputPath": "src/i18n"
           }
         },
         "test": {
