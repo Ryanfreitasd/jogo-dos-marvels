@@ -1,9 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 $font: 'Courier New', Courier, monospace;
+// Colors
 $background-color: #D9D9D9;
 $primary-color: #b70000;
 $secondary-color: #000080;
 $tertiary-color: #ffdd00;
+$white-color: #ffffff;
+$black-color: #000000cc;
+
+// Sizes
+$padding: 2rem;
+$padding-medium: 0.8rem;
+$padding-small: 0.4rem;
+$default-margin: 5rem;
+$default-height: 2rem;
+$default-font-size: 1.3rem;
+$small-font-size: 1rem;
+$default-border-radius: 1.5rem;
+$small-border-radius: 0.5rem;
+$default-width: 300px;
+
+// media queries
+$media-sm: 450px;
+$media-md: 900px;
+$media-lg: 1200px;
 
 * {
   margin: 0;
@@ -16,5 +36,5 @@ $tertiary-color: #ffdd00;
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }

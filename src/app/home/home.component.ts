@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   logo: string = 'assets/Marvel.png';
+
+  onStartGame() {
+    console.log('START');
+  }
 }
