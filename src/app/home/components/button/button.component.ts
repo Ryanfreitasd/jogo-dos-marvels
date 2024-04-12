@@ -7,6 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
   @Input({ required: true }) buttonLabel: string;
+  @Input() type?: string;
+  @Input() disabled: boolean = false;
   @Output() onClick = new EventEmitter<Function>();
 
   constructor() {

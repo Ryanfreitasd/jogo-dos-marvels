@@ -19,6 +19,7 @@ $small-font-size: 1rem;
 $default-border-radius: 1.5rem;
 $small-border-radius: 0.5rem;
 $default-width: 300px;
+$small-width: 200px;
 
 // media queries
 $media-sm: 450px;
@@ -30,6 +31,9 @@ $media-lg: 1200px;
   padding: 0;
   box-sizing: content-box;
   font-family: $font;
+}
+
+body {
   background: $background-color;
 }
 

@@ -12,5 +12,9 @@
       fieldPlaceholder="Type the character's name"
     />
   </section>
-  <app-button buttonLabel="Start match" (onClick)="onStartGame()"></app-button>
+  <app-button
+    buttonLabel="Start match"
+    (onClick)="onStartGame()"
+    [disabled]="signalService.isDisabled()"
+  ></app-button>
 </div>

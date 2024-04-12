@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SignalService } from './services/signal.service';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  constructor(readonly signalService: SignalService) {}
   logo: string = 'assets/Marvel.png';
 
-  onStartGame() {
-    console.log('START');
+  isDisabled = this.signalService.isDisabled();
+
+  async onStartGame() {
+    alert('começou o jogo');
   }
 }

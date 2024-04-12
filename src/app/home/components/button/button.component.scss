@@ -19,4 +19,13 @@ button {
     color: $secondary-color;
     background-color: $tertiary-color;
   }
+
+  &:disabled {
+    background-color: #c3c3c3;
+    cursor: auto;
+
+    &:active {
+        color: white;
+      }
+  }
 }

@@ -15,14 +15,15 @@
 
   input {
     height: $default-height;
-    width: $default-width;
+    width: $small-width;
     padding: $padding-small;
-    border-radius: $small-border-radius;
+    border-radius: $default-border-radius;
     font-size: $small-font-size;
     font-family: $font;
     color: $white-color;
     border: none;
     background-color: $black-color;
+    margin-right: 10px;
 
     &:focus {
       outline: none;

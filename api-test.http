@@ -1,0 +1,5 @@
+GET https://gateway.marvel.com:443/v1/public/characters HTTP/1.1
+  ?apikey=c933e58d3e3310f36142a62c27b6a910
+  &ts=1
+  &hash=87a6ed9e7835d884bc6824bebcb01bc3
+

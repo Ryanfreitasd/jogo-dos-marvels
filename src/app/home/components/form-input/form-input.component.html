@@ -1,11 +1,21 @@
 <div id="input-group">
   <label [for]="formControl" i18n>{{ fieldName }}</label>
-  <input
-    [id]="fieldName"
-    [placeholder]="fieldPlaceholder"
-    type="text"
-    [name]="fieldName"
-    [formControl]="formControl"
-    i18n
-  />
+  <div>
+    <input
+      [id]="fieldName"
+      [placeholder]="fieldPlaceholder"
+      type="url"
+      [name]="fieldName"
+      [formControl]="formControl"
+      i18n
+    />
+    <app-button
+      buttonLabel="Search"
+      type="submit"
+      (onClick)="search()"
+    ></app-button>
+  </div>
+  @if (isHero()) {
+  <app-hero [hero]="hero"></app-hero>
+  }
 </div>

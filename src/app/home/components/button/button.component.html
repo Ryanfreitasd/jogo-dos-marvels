@@ -1,3 +1,9 @@
-<button (click)="onClick.emit()" [ariaLabel]="buttonLabel" i18n>
+<button
+  [type]="type"
+  (click)="onClick.emit()"
+  [ariaLabel]="buttonLabel"
+  [disabled]="disabled"
+  i18n
+>
   {{ buttonLabel }}
 </button>
