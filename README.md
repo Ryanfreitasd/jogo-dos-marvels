@@ -1,6 +1,32 @@
-# Marvel Games
+# Project: Marvel Games
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+
+## Description
+
+this project is a game tic-tac-toe with characters Marvels.
+
+## Tecnologies
+
+- Angular 17.3.2
+- SCSS
+- Typescript
+- HTML5
+
+# Instalation
+
+- Clone the repository
+
+```bash
+git clone https://github.com/Ryanfreitasd/jogo-dos-marvels.git
+```
+
+- Run `npm install`
+- Run `ng serve`
+
+## Thirdy party Api
+
+- [marvel](https://developer.marvel.com)
 
 ## Development server
 
