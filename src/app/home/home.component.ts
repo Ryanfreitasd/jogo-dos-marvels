@@ -9,10 +9,12 @@ import { SignalService } from './services/signal.service';
 export class HomeComponent {
   constructor(readonly signalService: SignalService) {}
   logo: string = 'assets/Marvel.png';
-
-  isDisabled = this.signalService.isDisabled();
-
-  async onStartGame() {
-    alert('começou o jogo');
-  }
+  playersStyle = [
+    {
+      'background-color': '#b70000',
+    },
+    {
+      'background-color': '#000080',
+    },
+  ];
 }

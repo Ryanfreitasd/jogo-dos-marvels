@@ -10,6 +10,9 @@ import { HomeService } from './services/home.service';
 import { provideHttpClient } from '@angular/common/http';
 import { HeroComponent } from './components/hero/hero.component';
 import { SignalService } from './services/signal.service';
+import { BoardComponent } from './components/board/board.component';
+import { SquareComponent } from './components/square/square.component';
+import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { SignalService } from './services/signal.service';
     FormInputComponent,
     ButtonComponent,
     HeroComponent,
+    BoardComponent,
+    SquareComponent,
+    ScoreboardComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
   providers: [provideHttpClient(), HomeService, SignalService],

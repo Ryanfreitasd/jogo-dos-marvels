@@ -1,20 +1,62 @@
 <div class="container">
   <img alt="logo-marvel" src="{{ logo }}" />
+  @if (!signalService.isStartGame()) {
   <h1 i18n>Welcome to Marvels Game.</h1>
   <h3 i18n>To start new match, select the characters in the fields below.</h3>
+  } @else {
+  <h1 i18n>Let's go play</h1>
+  <app-scoreboard></app-scoreboard>
+  <div class="buttons-inline">
+    <app-button
+      buttonLabel="New Match"
+      (onClick)="signalService.newMatch()"
+    ></app-button>
+    <app-button
+      buttonLabel="Reset game"
+      (onClick)="signalService.reset()"
+    ></app-button>
+  </div>
+  }
   <section>
-    <app-form-input
-      fieldName="Character 1"
-      fieldPlaceholder="Type the character's name"
-    />
-    <app-form-input
-      fieldName="Character 2"
-      fieldPlaceholder="Type the character's name"
-    />
+    <div>
+      <app-form-input
+        fieldName="Character 1"
+        fieldPlaceholder="Type the character's name"
+        [heroSelected]="signalService.character1"
+      />
+      @if (signalService.character1()){
+      <app-hero [hero]="signalService.character1()" [style]="playersStyle[0]" />
+      }
+    </div>
+    @if (signalService.isStartGame() && !signalService.winner()) {
+    <div class="step-status">
+      <h3>Next to play is:</h3>
+      <h2>{{ signalService.nextPlayer() }}</h2>
+    </div>
+    } @if(signalService.winner()) {
+    <div class="step-status">
+      <h3>Winner:</h3>
+      <h2>{{ signalService.showWinnerName() }}</h2>
+    </div>
+    }
+    <div>
+      <app-form-input
+        fieldName="Character 2"
+        fieldPlaceholder="Type the character's name"
+        [heroSelected]="signalService.character2"
+      />
+      @if (signalService.character2()){
+      <app-hero [hero]="signalService.character2()" [style]="playersStyle[1]" />
+      }
+    </div>
   </section>
+  @if (!signalService.isStartGame()){
   <app-button
     buttonLabel="Start match"
-    (onClick)="onStartGame()"
+    (onClick)="signalService.onStartGame()"
     [disabled]="signalService.isDisabled()"
   ></app-button>
+  } @else {
+  <app-board></app-board>
+  }
 </div>

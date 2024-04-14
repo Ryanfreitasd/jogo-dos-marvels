@@ -4,7 +4,7 @@
     <input
       [id]="fieldName"
       [placeholder]="fieldPlaceholder"
-      type="url"
+      type="text"
       [name]="fieldName"
       [formControl]="formControl"
       i18n
@@ -13,9 +13,7 @@
       buttonLabel="Search"
       type="submit"
       (onClick)="search()"
+      [disabled]="formControl.value === ''"
     ></app-button>
   </div>
-  @if (isHero()) {
-  <app-hero [hero]="hero"></app-hero>
-  }
 </div>

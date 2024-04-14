@@ -1,16 +1,7 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  signal,
-} from '@angular/core';
+import { Component, Input, WritableSignal } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { HeroInterface } from '../../../interfaces/hero-interface';
 import { HomeService } from '../../services/home.service';
-import { catchError, of } from 'rxjs';
-import { SignalService } from '../../services/signal.service';
+import { HeroInterface } from '../../../interfaces/hero-interface';
 
 @Component({
   selector: 'app-form-input',
@@ -20,17 +11,11 @@ import { SignalService } from '../../services/signal.service';
 export class FormInputComponent {
   @Input({ required: true }) fieldName: string;
   @Input({ required: true }) fieldPlaceholder: string;
-  @Input() items?: Array<HeroInterface>;
-  @Output() valueChange = new EventEmitter<string>();
+  @Input() heroSelected?: WritableSignal<HeroInterface | null>;
 
   formControl: FormControl = new FormControl('', Validators.required);
-  hero?: HeroInterface;
-  isHero = signal(false);
 
-  constructor(
-    private readonly service: HomeService,
-    private readonly signalService: SignalService
-  ) {
+  constructor(private readonly service: HomeService) {
     this.fieldName = '';
     this.fieldPlaceholder = '';
   }
@@ -38,15 +23,9 @@ export class FormInputComponent {
   search() {
     this.service.getHeroName(this.formControl.value).subscribe((response) => {
       if (response.code === 200 && response.data!.results.length > 0) {
-        this.hero = response.data?.results[0];
-        this.isHero.set(true);
-        if (this.fieldName === 'Character 1') {
-          this.signalService.isPlayer1.set(true);
-        } else {
-          this.signalService.isPlayer2.set(true);
-        }
+        this.heroSelected?.set(response.data!.results[0]);
+        this.formControl.setValue('');
       } else {
-        this.isHero.set(false);
         this.formControl.setValue('');
         alert('Herói não encontrado');
       }

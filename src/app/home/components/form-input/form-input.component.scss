@@ -3,7 +3,6 @@
 #input-group {
   display: flex;
   flex-direction: column;
-  padding: $padding;
 
   label {
     font-family: $font;
@@ -16,7 +15,7 @@
   input {
     height: $default-height;
     width: $small-width;
-    padding: $padding-small;
+    padding: $padding-small $padding-small $padding-small 1rem;
     border-radius: $default-border-radius;
     font-size: $small-font-size;
     font-family: $font;

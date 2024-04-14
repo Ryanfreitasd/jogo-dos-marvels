@@ -7,10 +7,6 @@ import { HeroInterface } from '../../../interfaces/hero-interface';
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
-  @Input({ required: true }) hero?: HeroInterface;
-
-  urlImg: string =
-    this.hero?.thumbnail.path +
-    '/standard_medium.' +
-    this.hero?.thumbnail.extension;
+  @Input({ required: true }) hero?: HeroInterface | null;
+  @Input() style?: { [key: string]: string };
 }

@@ -5,6 +5,6 @@ import { ErrorHandler, Injectable } from '@angular/core';
 })
 export class GlobalHandlerErrorService implements ErrorHandler {
   handleError(error: any): void {
-    throw new Error('Method not implemented.');
+    throw new Error(error);
   }
 }

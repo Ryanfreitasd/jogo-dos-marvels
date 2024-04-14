@@ -1,0 +1,14 @@
+@import '../../../../styles.scss';
+
+.scoreboard-container {
+  margin-top: $padding;
+
+  span {
+    font-size: 4rem;
+    padding-inline: $padding-small;
+  }
+
+  .score {
+    font-weight: bold;
+  }
+}

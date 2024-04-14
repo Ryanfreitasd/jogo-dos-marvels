@@ -6,13 +6,13 @@
   display: flex;
   align-items: center;
   margin-top: 1rem;
-  background-color: $white-color;
+  color: $white-color;
   border-radius: $default-border-radius;
   animation-name: fade-in;
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  
+
 
   img {
     border-radius: $default-border-radius 0 0 $default-border-radius;
