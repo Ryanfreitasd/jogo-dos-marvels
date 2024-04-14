@@ -1,0 +1,44 @@
+<div>
+  <div class="board-row">
+    <app-square
+      value="{{ this.signalService.squares()[0] }}"
+      (onClickFn)="onClickSquare(0)"
+    />
+    <app-square
+      value="{{ this.signalService.squares()[1] }}"
+      (onClickFn)="onClickSquare(1)"
+    />
+    <app-square
+      value="{{ this.signalService.squares()[2] }}"
+      (onClickFn)="onClickSquare(2)"
+    />
+  </div>
+  <div class="board-row">
+    <app-square
+      value="{{ this.signalService.squares()[3] }}"
+      (onClickFn)="onClickSquare(3)"
+    />
+    <app-square
+      value="{{ this.signalService.squares()[4] }}"
+      (onClickFn)="onClickSquare(4)"
+    />
+    <app-square
+      value="{{ this.signalService.squares()[5] }}"
+      (onClickFn)="onClickSquare(5)"
+    />
+  </div>
+  <div class="board-row">
+    <app-square
+      value="{{ this.signalService.squares()[6] }}"
+      (onClickFn)="onClickSquare(6)"
+    />
+    <app-square
+      value="{{ this.signalService.squares()[7] }}"
+      (onClickFn)="onClickSquare(7)"
+    />
+    <app-square
+      value="{{ this.signalService.squares()[8] }}"
+      (onClickFn)="onClickSquare(8)"
+    />
+  </div>
+</div>

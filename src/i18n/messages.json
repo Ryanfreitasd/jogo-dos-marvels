@@ -1,0 +1,14 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "1261326542949079783": "Marvels Game",
+    "718664953917016933": " {$INTERPOLATION}\n",
+    "187187500641108332": "{$INTERPOLATION}",
+    "824153808018133253": "Welcome to Marvels Game.",
+    "1449620421789262382": "To start new match, search the characters in the fields below.",
+    "4949034201938664375": "Let's go play",
+    "6749836563454610906": "Next to play is:",
+    "3872869255832147776": "Winner:",
+    "7909680464763140109": "Oh no:"
+  }
+}

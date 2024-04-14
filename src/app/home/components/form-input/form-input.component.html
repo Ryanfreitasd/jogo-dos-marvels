@@ -1,0 +1,19 @@
+<div id="input-group">
+  <label [for]="formControl" i18n>{{ fieldName }}</label>
+  <div>
+    <input
+      [id]="fieldName"
+      [placeholder]="fieldPlaceholder"
+      type="text"
+      [name]="fieldName"
+      [formControl]="formControl"
+      i18n
+    />
+    <app-button
+      buttonLabel="Search"
+      type="submit"
+      (onClick)="search()"
+      [disabled]="formControl.value === ''"
+    ></app-button>
+  </div>
+</div>

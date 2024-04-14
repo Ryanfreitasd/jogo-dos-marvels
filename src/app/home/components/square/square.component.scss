@@ -1,0 +1,22 @@
+@import '../../../../styles.scss';
+
+button {
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  font-size: 30px;
+  font-weight: bold;
+  float: left;
+  margin-top: -1px;
+  margin-left: -1px;
+  color: $white-color;
+  border: 2px solid $background-color;
+
+  &[value="O"] {
+    background-color: $secondary-color;
+  }
+
+  &[value="X"] {
+    background-color: $primary-color;
+  }
+}

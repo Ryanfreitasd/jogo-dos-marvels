@@ -1,0 +1,31 @@
+@import '../../../../styles.scss';
+
+button {
+  border: none;
+  border-radius: $default-border-radius;
+  background-color: $blue-color;
+  height: $default-height;
+  max-width: $default-width;
+  width: auto;
+  color: $white-color;
+  padding: $padding-small $padding;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+  }
+
+  &:active {
+    color: $secondary-color;
+    background-color: $tertiary-color;
+  }
+
+  &:disabled {
+    background-color: #c3c3c3;
+    cursor: auto;
+
+    &:active {
+        color: white;
+      }
+  }
+}

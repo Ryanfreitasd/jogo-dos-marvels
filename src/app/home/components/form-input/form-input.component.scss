@@ -1,0 +1,35 @@
+@import '../../../../styles.scss';
+
+#input-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-family: $font;
+    font-weight: bold;
+    font-size: $default-font-size;
+    margin-bottom: $padding-small;
+    color: $primary-color;
+  }
+
+  input {
+    height: $default-height;
+    width: $small-width;
+    padding: $padding-small $padding-small $padding-small 1rem;
+    border-radius: $default-border-radius;
+    font-size: $small-font-size;
+    font-family: $font;
+    color: $white-color;
+    border: none;
+    background-color: $black-color;
+    margin-right: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @media screen and (max-width: $media-sm) {
+    padding: $padding-medium;
+  }
+}
