@@ -1,20 +1,15 @@
 import { HeroResponseInterface } from './../../interfaces/hero-response-interface';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpParams,
-} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { Observable } from 'rxjs';
 import md5 from 'md5';
-import { HeroInterface } from '../../interfaces/hero-interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
-  private readonly api = environment.baseUrl;
+  readonly api = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -42,22 +37,5 @@ export class HomeService {
     return this.http.get<HeroResponseInterface>(`${this.api}/characters`, {
       params: params,
     });
-  }
-
-  getDataInLocalStorage(key: string): HeroResponseInterface | null {
-    const data = localStorage.getItem(key);
-
-    if (data) {
-      const herosResponse = JSON.parse(data);
-      return herosResponse;
-    }
-
-    return null;
-  }
-
-  setDataInLocalStorage(data: HeroResponseInterface) {
-    if (data) {
-      localStorage.setItem('data', JSON.stringify(data));
-    }
   }
 }

@@ -30,12 +30,16 @@
     </div>
     @if (signalService.isStartGame() && !signalService.winner()) {
     <div class="step-status">
-      <h3>Next to play is:</h3>
+      <h3 i18n>Next to play is:</h3>
       <h2>{{ signalService.nextPlayer() }}</h2>
     </div>
     } @if(signalService.winner()) {
     <div class="step-status">
-      <h3>Winner:</h3>
+      @if(signalService.showWinnerName() !== 'Tie!!!'){
+      <h3 i18n>Winner:</h3>
+      } @else {
+      <h3 i18n>Oh no:</h3>
+      }
       <h2>{{ signalService.showWinnerName() }}</h2>
     </div>
     }

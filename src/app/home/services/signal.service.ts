@@ -32,9 +32,11 @@ export class SignalService {
 
   showWinnerName = computed(() => {
     if (this.winner() === 'X') {
-      return this.character1()?.name;
+      return `${this.character1()?.name}!!!`;
     } else if (this.winner() === 'O') {
-      return this.character2()?.name;
+      return `${this.character2()?.name}!!!`;
+    } else if (this.winner() === 'Tie') {
+      return 'Tie!!!';
     }
     return null;
   });

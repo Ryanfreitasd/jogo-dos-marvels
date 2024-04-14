@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GlobalHandlerErrorService } from './global-handler-error.service';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import locale from '@angular/common/locales/pt';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +16,13 @@ import { GlobalHandlerErrorService } from './global-handler-error.service';
       provide: ErrorHandler,
       useClass: GlobalHandlerErrorService,
     },
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt',
+    },
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+registerLocaleData(locale);

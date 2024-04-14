@@ -4,6 +4,7 @@ import { SignalService } from './signal.service';
 
 describe('SignalService', () => {
   let service: SignalService;
+  let mockSquare = ['X', 'X', 'X', '', '', '', '', '', ''];
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -12,5 +13,10 @@ describe('SignalService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('#calculateWinner should be return if winner', () => {
+    const winner = service.calculateWinner(mockSquare);
+    expect(winner).toBe('X');
   });
 });
